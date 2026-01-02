@@ -28,8 +28,8 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS=['localhost','https://author-ide.skills.network/render?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZF9pbnN0cnVjdGlvbnNfdXJsIjoiaHR0cHM6Ly9jZi1jb3Vyc2VzLWRhdGEuczMudXMuY2xvdWQtb2JqZWN0LXN0b3JhZ2UuYXBwZG9tYWluLmNsb3VkLy0xTjJ1WTdsZGsxSDFhZ3dJNVJMaHcvQWRkJTIwU3RhdGljJTIwUGFnZXMtTWFyay12MS5tZD90PTE3NjUzNTk3MDYiLCJ0b29sX3R5cGUiOiJ0aGVpYSIsImF0bGFzX2ZpbGVfaWQiOjQzOTUwOCwiYWRtaW4iOmZhbHNlLCJpYXQiOjE3NjUzNTk3MDd9.E4LHqy2Qk1rm8HMS1kAdWs-rS53H9g2mSPf2O1BJVlU']
+CSRF_TRUSTED_ORIGINS=['https://author-ide.skills.network/render?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZF9pbnN0cnVjdGlvbnNfdXJsIjoiaHR0cHM6Ly9jZi1jb3Vyc2VzLWRhdGEuczMudXMuY2xvdWQtb2JqZWN0LXN0b3JhZ2UuYXBwZG9tYWluLmNsb3VkLy0xTjJ1WTdsZGsxSDFhZ3dJNVJMaHcvQWRkJTIwU3RhdGljJTIwUGFnZXMtTWFyay12MS5tZD90PTE3NjUzNTk3MDYiLCJ0b29sX3R5cGUiOiJ0aGVpYSIsImF0bGFzX2ZpbGVfaWQiOjQzOTUwOCwiYWRtaW4iOmZhbHNlLCJpYXQiOjE3NjUzNTk3MDd9.E4LHqy2Qk1rm8HMS1kAdWs-rS53H9g2mSPf2O1BJVlU']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -61,7 +61,9 @@ ROOT_URLCONF = 'djangoproj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'frontend/static')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,5 +136,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'frontend/static')
+]
 
